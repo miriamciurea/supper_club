@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   # root "posts#index"
   root to: "events#home"
   devise_for :users
+  resources :users, only: :show, as: :profile
+
   resources :events do
     resources :tickets, only: :create
   end
