@@ -1,11 +1,11 @@
 class EventsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :home
+  skip_before_action :authenticate_user!, only: [:home, :index, :show]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def home
     @event = Event.all
   end
-  
+
   def index
   end
 
