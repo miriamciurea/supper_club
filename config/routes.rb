@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # root "posts#index"
   root to: "events#home"
   devise_for :users
-    resources :events do
-      resources :tickets, only: :create
-    end
+  resources :events do
+    resources :tickets, only: :create
+  end
 end
