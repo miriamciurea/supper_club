@@ -9,4 +9,8 @@
 
 // Your CSS partials
 @import "components/index";
-@import "pages/index";
+@import "events/index";
+
+html {
+  background-color: ECF0E8;
+}
