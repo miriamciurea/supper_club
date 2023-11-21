@@ -1,14 +1,12 @@
-<h1>Index page</h1>
-
-<% @events.each do |event| %>
-<div class="my-5">
-<h5><strong><%= event.venue %></strong></h5>
-<p><%= event.menu %></p>
-<p><%= event.cuisine %></p>
-<p><%= event.price %></p>
-<p><%= event.description %></p>
-<p><%= event.capacity %></p>
-<p><%= event.date %></p>
-<%= link_to "Show this event!", event_path(event)%>
+<div class="index-body">
+  <h1 class="index-header"><strong>Upcoming Events</strong></h1>
+  <% @events.each do |event| %>
+    <div class="index my-5">
+      <h5><strong><%= event.venue %></strong></h5>
+      <p><%= event.cuisine %></p>
+      <p><%= event.date %></p>
+      <p><%= event.price %></p>
+      <%= link_to "Show this event!", event_path(event)%>
+    </div>
+  <% end %>
 </div>
-<% end %>
