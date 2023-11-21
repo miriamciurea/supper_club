@@ -8,9 +8,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root to: "events#home"
-  devise_for :users do
+  devise_for :users
     resources :events do
-      reources :tickets, only: :create
+      resources :tickets, only: :create
     end
-  end
 end
