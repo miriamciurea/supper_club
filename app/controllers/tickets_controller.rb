@@ -1,5 +1,7 @@
 class TicketsController < ApplicationController
+
   def create
+    @event = Event.find(params[:event_id])
     @ticket = Ticket.new(ticket_params)
     @ticket.user = current_user
     if @ticket.save
