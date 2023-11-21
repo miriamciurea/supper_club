@@ -48,7 +48,7 @@ end
   2.times do
     event = Event.new(
       venue: venues.sample,
-      menu: meals_array.sample(5),
+      menu: meals_array.sample(5).join(", "),
       cuisine: cuisines.sample(),
       price: price_array.sample,
       description: descriptions.sample,
