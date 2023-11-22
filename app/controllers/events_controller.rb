@@ -10,6 +10,8 @@ class EventsController < ApplicationController
   end
 
   def show
+    @ticket = Ticket.new
+
   end
 
   def new
