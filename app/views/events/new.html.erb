@@ -1,13 +1,3 @@
 <h1>Create New Event</h1>
-<%#
-<% render "add_event_form" %>
-<%= simple_form_for(@event) do |f| %>
-  <%= f.input :venue %>
-  <%= f.input :menu, placeholder: "List your courses here" %>
-  <%= f.input :cuisine %>
-  <%= f.input :price %>
-  <%= f.input :description %>
-  <%= f.input :capacity, as: :integer %>
-  <%= f.input :date, as: :date %>
-  <%= f.submit %>
-<% end %>
+
+<%= render partial: "html_components/add_event_form", events: @event %>
