@@ -12,6 +12,11 @@ class TicketsController < ApplicationController
     end
   end
 
+  def destroy
+    @ticket = Ticket.find(params[:id])
+    @ticket.destroy
+    redirect_to profile_path(current_user), notice: "Event was successfully canceled."
+  end
 
   private
 
