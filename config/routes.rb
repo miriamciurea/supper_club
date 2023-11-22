@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   resources :events do
     resources :tickets, only: :create
   end
+
+  resources :tickets, only: :destroy
 end
