@@ -1,6 +1,6 @@
-<%= simple_form_for(@user, @event, @ticket) do |f| %>
-  <%= f.input :start_time, as: time %>
-  <%= f.input :end_time, as: time %>
+<%= simple_form_for [@user, @event, @ticket] do |f| %>
+  <%= f.input :start_time%>
+  <%= f.input :end_time %>
   <%= f.input :guests, label: "Number of guests"  %>
   <%= f.submit %>
 <% end %>
