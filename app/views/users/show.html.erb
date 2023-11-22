@@ -1,0 +1,47 @@
+<h1>profile page</h1>
+<h3>Hi <%= @user.first_name %> <%= @user.last_name %></h3>
+<%# I sort the events that the user hosts %>
+<h2>Upcoming events: </h2>
+<% @upcoming_events.each do |event| %>
+  <p><%= distance_of_time_in_words(event.date.to_time - Time.now) %></p>
+  <%= event.description %>
+<% end %>
+
+<%# I sort the tickets that the user participated at %>
+<br>
+<br>
+<h2>Past events: </h2>
+<% @past_events.each do |event| %>
+  <p><%= distance_of_time_in_words(event.date.to_time - Time.now) %></p>
+  <%= event.description %>
+<% end %>
+
+<br>
+<br>
+<h2>My tickets: </h2>
+<% @valid_tickets.each do |ticket| %>
+  event = ticket.event
+  <p><%= distance_of_time_in_words(event.date.to_time - Time.now) %></p>
+  <%= event.description %>
+<% end %>
+
+<br>
+<br>
+
+<%# <h2>Upcoming..tickets? : </h2>
+<% @expired_tickets.each do |ticket| %>
+  <%# event = ticket.event %>
+  <%# <p><%= distance_of_time_in_words(event.date.to_time - Time.now) %>
+  <%# <%= event.description %>
+<%# <%  end %>
+
+
+<%# <% @tickets.each do |ticket| %>
+  <%# event = ticket.event %>
+  <%# <p><%= distance_of_time_in_words(event.date - Date.today) %>
+  <%# parsed_time - now < 0 ? @upcoming_events << event : @history << event %>
+<%# end %>
+
+<%# @events.each do |event| %>
+  <%# event. %>
+<%# end %>
