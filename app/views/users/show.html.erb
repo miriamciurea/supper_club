@@ -1,5 +1,19 @@
-<h1>profile page</h1>
 <h3>Hi <%= @user.first_name %> <%= @user.last_name %></h3>
+
+<br>
+
+<h2>My tickets: </h2>
+<% @valid_tickets.each do |ticket| %>
+  <% event = ticket.event %>
+  <%= event.venue %>
+  <%= event.cuisine %>
+  <%= event.price %>
+  <p>This event takes place in <%= distance_of_time_in_words(event.date.to_time - Time.now) %></p>
+  <p><%= ticket.start_time %> - <%= ticket.end_time %>, <%= event.date %></p>
+  <p>Guests: <%= ticket.guests %></p>
+<% end %>
+
+
 <%# I sort the events that the user hosts %>
 <h2>Upcoming events: </h2>
 <% @upcoming_events.each do |event| %>
@@ -18,12 +32,6 @@
 
 <br>
 <br>
-<h2>My tickets: </h2>
-<% @valid_tickets.each do |ticket| %>
-  event = ticket.event
-  <p><%= distance_of_time_in_words(event.date.to_time - Time.now) %></p>
-  <%= event.description %>
-<% end %>
 
 <br>
 <br>
