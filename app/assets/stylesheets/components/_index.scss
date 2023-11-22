@@ -3,3 +3,14 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+
+.container-fluid {
+  flex-direction: row;
+  justify-content: center;
+}
+
+.card {
+  display: grid;
+  flex-wrap: wrap;
+  justify-content: center;
+}
