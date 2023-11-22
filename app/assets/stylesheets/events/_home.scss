@@ -1,6 +1,13 @@
 // Specific CSS for your home-page
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,500;1,500&family=Poppins:ital,wght@0,100;0,300;0,500;1,100;1,200&display=swap');
 
+.home-image {
+  width: 745.11px;
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+
 .big-logo {
   width: 273px;
   height: 168px;
@@ -36,12 +43,7 @@
   }
 }
 
-.home-image {
-  width: 745.11px;
-  top: 0;
-  right: 0;
-  position: absolute;
-}
+
 .intro {
   position: absolute;
   left: 100px;
