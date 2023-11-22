@@ -4,10 +4,11 @@ class TicketsController < ApplicationController
     @event = Event.find(params[:event_id])
     @ticket = Ticket.new(ticket_params)
     @ticket.user = current_user
+    @ticket.event = @event
     if @ticket.save
-      redirect_to @ticket, notice: "ticket created successfully!"
+      redirect_to profile_path(current_user), notice: "ticket created successfully!"
     else
-      render :new, status: :unprocessable_entity
+      render "events/show", status: :unprocessable_entity
     end
   end
 
@@ -15,6 +16,6 @@ class TicketsController < ApplicationController
   private
 
   def ticket_params
-    params.require(:ticket).permit(:user_id, :event_id, :start_time, :end_time, :guests)
+    params.require(:ticket).permit(:start_time, :end_time, :guests)
   end
 end
