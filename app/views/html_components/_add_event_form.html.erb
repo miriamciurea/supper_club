@@ -5,6 +5,8 @@
   <%= f.input :price %>
   <%= f.input :description %>
   <%= f.input :capacity, as: :integer %>
-  <%= f.input :date, as: :date %>
+  <%= f.input :date,
+              as: :string,
+              input_html: { data: { controller: "datepicker" } } %>
   <%= f.submit %>
 <% end %>
