@@ -6,11 +6,12 @@
 <% @valid_tickets.each do |ticket| %>
   <% event = ticket.event %>
   <p>Venue: <%= event.venue %></p>
-  <p>Cuisine: <%= event.cuisine %></p>
-  <p>Price per person: <%= event.price %></p>
-  <p><%= ticket.start_time.hour %>:<%= ticket.start_time.min %> - <%= ticket.end_time.hour %>:<%= ticket.end_time.min %> , <%= event.date %></p>
-  <p>Guests: <%= ticket.guests %></p>
+  <p><%= ticket.start_time.hour %>:<%= ticket.start_time.min < 10 ? "0#{ticket.start_time.min}" : ticket.start_time.min %> - <%= ticket.end_time.hour %>:<%= ticket.end_time.min < 10 ? "0#{ticket.end_time.min}" : ticket.end_time.min %>, <%= Time.parse(event.date.to_s).strftime("%d-%m-%Y") %></p>
+  <% if !ticket.guests.nil? %>
+    <p>Guests: <%= ticket.guests %></p>
+  <% end %>
   <p>This event takes place in <%= distance_of_time_in_words(event.date.to_time - Time.now) %></p>
+  <%= link_to "More info", event_path(event) %><br>
   <%= link_to "Cancel ticket", ticket_path(ticket),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 <% end %>
