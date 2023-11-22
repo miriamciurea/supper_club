@@ -1,30 +1,51 @@
-<h3>Hi <%= @user.first_name %> <%= @user.last_name %></h3>
 
-<br>
+<h1 class="mx-3 mt-3">Profile: <%= @user.first_name %> <%= @user.last_name %></h1>
 
-<h2>My tickets: </h2>
-<% @valid_tickets.each do |ticket| %>
-  <% event = ticket.event %>
-  <p>Venue: <%= event.venue %></p>
-  <p>Cuisine: <%= event.cuisine %></p>
-  <p>Price per person: <%= event.price %></p>
-  <p><%= ticket.start_time.hour %>:<%= ticket.start_time.min %> - <%= ticket.end_time.hour %>:<%= ticket.end_time.min %> , <%= event.date %></p>
-  <p>Guests: <%= ticket.guests %></p>
-  <p>This event takes place in <%= distance_of_time_in_words(event.date.to_time - Time.now) %></p>
-  <%= link_to "Cancel ticket", ticket_path(ticket),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-<% end %>
+<div class="index-body">
+  <h2 class="index-header my-4"><strong>My tickets</strong></h2>
+  <div class="container-fluid mx-5">
+    <div class="row gy-4">
+      <% @valid_tickets.each do |ticket| %>
+      <div class ="card col-2 mx-2 p-4 rounded">
+          <div class="index">
+        <% event = ticket.event %>
+        <p><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
+        <p><i class="fa-solid fa-clock"></i> <%= ticket.start_time.hour %>:<%= ticket.start_time.min < 10 ? "0#{ticket.start_time.min}" : ticket.start_time.min %> - <%= ticket.end_time.hour %>:<%= ticket.end_time.min < 10 ? "0#{ticket.end_time.min}" : ticket.end_time.min %></p>
+        <p><i class="fa-solid fa-calendar-days"></i> <%= Time.parse(event.date.to_s).strftime("%d-%m-%Y") %></p>
+        <% if !ticket.guests.nil? %>
+          <p><i class="fa-solid fa-user"></i> x <%= ticket.guests %></p>
+        <% end %>
+        <p>This event takes place in <%= distance_of_time_in_words(event.date.to_time - Time.now) %></p>
+        <%= link_to "More info", event_path(event) %><br>
+        <%= link_to "Cancel ticket", ticket_path(ticket),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        </div>
+        </div>
+      <% end %>
+      </div>
+  </div>
+</div>
 
 
 <%# I sort the events that the user hosts %>
-<h2>My events: </h2>
+<div class="index-body">
+  <h2 class="index-header my-4"><strong>My events</strong></h2>
+  <div class="container-fluid mx-5">
+    <div class="row gy-4">
 <% @upcoming_events.each do |event| %>
-  <p>Venue: <%= event.venue %></p>
+  <div class ="card col-2 mx-2 p-4 rounded">
+    <div class="index">
+  <p><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
   <p>Capacity: <%= event.capacity %></p>
-  <p>Date: <%= event.date %></p>
+  <p><i class="fa-solid fa-calendar-days"></i> <%= Time.parse(event.date.to_s).strftime("%d-%m-%Y") %></p>
   <p>This event takes place in <%= distance_of_time_in_words(event.date.to_time - Time.now) %></p>
   <%= link_to "More info", event_path(event) %><br>
   <%= link_to "Edit event", edit_event_path(event) %><br>
   <%= link_to "Cancel event", event_path(event),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  </div>
+  </div>
 <% end %>
+      </div>
+  </div>
+</div>

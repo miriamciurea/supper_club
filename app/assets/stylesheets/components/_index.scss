@@ -4,3 +4,14 @@
 @import "form_legend_clear";
 @import "navbar";
 @import "carousel";
+
+.container-fluid {
+  flex-direction: row;
+  justify-content: center;
+}
+
+.card {
+  display: grid;
+  flex-wrap: wrap;
+  justify-content: center;
+}
