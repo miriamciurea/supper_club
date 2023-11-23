@@ -1,9 +1,16 @@
 // Import page-specific CSS files here.
 @import "home";
+
 .index-body {
   text-align: center;
 }
 
 .index-header {
   margin: 20px 0;
+  font-family: Megrim;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 100px;
+  letter-spacing: -0.05em;
+  text-align: center;
 }

@@ -1,5 +1,7 @@
 <%= simple_form_for(@event) do |f| %>
-  <%= f.input :venue %>
+  <div data-controller='address-autocomplete' data-address-autocomplete-key-value='<%= ENV['MAPBOX_API_KEY'] %>'>
+    <%= f.input :venue , input_html: { data: {address_autocomplete_target: 'venue'}, class: 'd-none address-field' }%>
+  </div>
   <%= f.input :menu, placeholder: "List your courses here" %>
   <%= f.input :cuisine %>
   <%= f.input :price %>
