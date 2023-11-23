@@ -6,20 +6,10 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all
     if params[:query].present?
-      # @events = @events.where("venue ILIKE ?", "%#{params[:query]}%")
-      # sql_subquery = "venue ILIKE :query OR cuisine ILIKE :query"
-      # @events = @events.where(sql_subquery, query: "%#{params[:query]}%")
-      sql_subquery = <<~SQL
-      events.venue @@ :query
-      OR events.cuisine @@ :query
-      OR events.menu @@ :query
-      OR events.description @@ :query
-      OR users.first_name @@ :query
-      OR users.last_name @@ :query
-      SQL
-     @events = @events.joins(:user).where(sql_subquery, query: "%#{params[:query]}%")
+      @events = Event.global_search(params[:query])
+    else
+      @events = Event.all
     end
   end
 
