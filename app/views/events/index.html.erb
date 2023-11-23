@@ -16,14 +16,15 @@
     <div class="row gy-4">
       <% @events.each do |event| %>
         <div class ="card col-2 mx-2 p-4 rounded">
-          <div class="index">
-            <h5><strong>🧑‍🍳 <%= event.user.first_name %> <%= event.user.last_name %></strong></h5>
-            <p><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
-            <p><i class="fa-solid fa-utensils"></i> <%= event.cuisine %></p>
-            <p><i class="fa-solid fa-calendar-days"></i> <%= event.date %></p>
-            <p><i class="fa-solid fa-sterling-sign"></i> <%= event.price %></p>
-            <%= link_to "", event_path(event), class: 'stretched-link' %>
-          </div>
+            <div class="index">
+              <h5><strong>🧑‍🍳 <%= event.user.first_name %> <%= event.user.last_name %></strong></h5>
+              <p><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
+              <p><i class="fa-solid fa-utensils"></i> <%= event.cuisine %></p>
+              <p><i class="fa-solid fa-calendar-days"></i> <%= event.date %></p>
+              <p><i class="fa-solid fa-sterling-sign"></i> <%= event.price %></p>
+              <%= link_to "", event_path(event), class: 'stretched-link' %>
+            </div>
+          </th>
         </div>
       <% end %>
     </div>

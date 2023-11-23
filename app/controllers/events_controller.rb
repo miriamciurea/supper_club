@@ -6,10 +6,12 @@ class EventsController < ApplicationController
   end
 
   def index
+    @events = Event.order(:date)
     if params[:query].present?
-      @events = Event.global_search(params[:query])
+      events = Event.global_search(params[:query])
+      @events = events.sort_by {|event| event.date}
     else
-      @events = Event.all
+      @events = Event.all.sort_by {|event| event.date}
     end
   end
 
