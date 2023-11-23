@@ -19,7 +19,7 @@
             <% if current_user.photo.attached? %>
               <%= cl_image_tag current_user.photo.key, class: "avatar", alt: "dropdown menu" %>
             <% else %>
-              <%= image_tag 'avatar-default-symbolic', alt: "avatar-default", class: "avatar-default"%>
+              <%= image_tag 'avatar-default-symbolic.svg', alt: "avatar-default", class: "avatar-default"%>
             <% end %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
