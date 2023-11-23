@@ -4,7 +4,6 @@
 @import "form_legend_clear";
 @import "navbar";
 @import "carousel";
-@import "map";
 
 .container-fluid {
   flex-direction: row;
@@ -15,4 +14,33 @@
   display: grid;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.index-main-img {
+  width: 933.71px;
+  height: 580.32px;
+}
+.header-container {
+  padding: 0 50px;
+  position: relative;
+  height: 500px;
+  h1 {
+    position: absolute;
+    font-size: 60px;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  img {
+    height: 100%;
+    width: 75%;
+    object-fit: cover;
+  }
+  @media (max-width: 900px) {
+    padding: 0;
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
 }

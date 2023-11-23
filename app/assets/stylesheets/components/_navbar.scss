@@ -2,6 +2,7 @@
   justify-content: space-between;
   background: white;
   height: 90px;
+  width: 100%;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,4 +13,39 @@
 .navbar-lewagon .navbar-brand img {
   width: 80px;
   margin: 0 50px;
+}
+
+.events {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-right: 20px;
+}
+.avatar-default {
+  margin-top: 8px;
+}
+.container-fluid {
+  padding: 0 50px;
+}
+
+.login-link {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.02);
+  width: Fixed (162px);
+  height: Fixed (65px);
+  padding: 8px;
+  border-radius: 32px;
+  border: 2px;
+  gap: 8px;
+  padding: 10px 24px !important;
+  border: 2px solid #FFF;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.50) 6.26%, rgba(255, 255, 255, 0.00) 93.85%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(2px);
+
+  &:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.00) 93.85%, rgba(255, 255, 255, 0.50) 6.26%);
+  }
 }
