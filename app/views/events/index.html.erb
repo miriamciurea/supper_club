@@ -1,5 +1,8 @@
 <div class="index-body">
-  <h1 class="index-header my-4"><strong>Upcoming Events</strong></h1>
+  <div class="header-container">
+    <h1 class="index-header my-4"><strong>Upcoming Events</strong></h1>
+    <%= image_tag 'index-image', alt: "index-image", class: "index-main-img"%>
+  </div>
     <div class="container-fluid mx-5">
     <div class="row gy-4">
       <% @events.each do |event| %>
