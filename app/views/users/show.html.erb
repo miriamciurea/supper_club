@@ -1,6 +1,12 @@
 
 <div class="index-body">
-  <h2 class="index-header my-4"><strong>My tickets</strong></h2>
+  <h2 class="index-header my-4">
+  <% if @valid_tickets.length > 0 %>
+    <strong>My tickets</strong>
+  <% else %>
+    <p>No tickets yet..</p>
+  <% end %>
+  </h2>
   <div class="container-fluid mx-5">
     <div class="row gy-4">
       <% @valid_tickets.each do |ticket| %>
@@ -27,7 +33,13 @@
 
 <%# I sort the events that the user hosts %>
 <div class="index-body">
-  <h2 class="index-header my-4"><strong>My events</strong></h2>
+  <h2 class="index-header my-4">
+  <% if @upcoming_events.length > 0 %>
+    <strong>My events</strong>
+  <% else %>
+    <p>No events yet..</p>
+  <% end %>
+  </h2>
   <div class="container-fluid mx-5">
     <div class="row gy-4">
 <% @upcoming_events.each do |event| %>
