@@ -1,25 +1,28 @@
 
-<h1 class="mx-3 mt-3">Profile: <%= @user.first_name %> <%= @user.last_name %></h1>
-
 <div class="index-body">
-  <h2 class="index-header my-4"><strong>My tickets</strong></h2>
-  <div class="container-fluid mx-5">
-    <div class="row gy-4">
-      <% @valid_tickets.each do |ticket| %>
-      <div class ="card col-2 mx-2 p-4 rounded">
-          <div class="index">
-        <% event = ticket.event %>
-        <p><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
-        <p><i class="fa-solid fa-clock"></i> <%= ticket.start_time.hour %>:<%= ticket.start_time.min < 10 ? "0#{ticket.start_time.min}" : ticket.start_time.min %> - <%= ticket.end_time.hour %>:<%= ticket.end_time.min < 10 ? "0#{ticket.end_time.min}" : ticket.end_time.min %></p>
-        <p><i class="fa-solid fa-calendar-days"></i> <%= Time.parse(event.date.to_s).strftime("%d-%m-%Y") %></p>
-        <% if !ticket.guests.nil? %>
-          <p><i class="fa-solid fa-user"></i> x <%= ticket.guests %></p>
-        <% end %>
-        <p>This event takes place in <%= distance_of_time_in_words(event.date.to_time - Time.now) %></p>
-        <%= link_to "More info", event_path(event) %><br>
-        <%= link_to "Cancel ticket", ticket_path(ticket),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-        </div>
+  <h2 class="index-header my-4">
+    <strong>My tickets</strong>
+    <% if @valid_tickets.length == 0 %>
+      <p style="color: grey; font-family: Poppins; font-weight: 250; font-size: 40px;">No tickets yet . . . </p>
+    <% end %>
+    </h2>
+    <div class="container-fluid mx-5">
+      <div class="row gy-4">
+        <% @valid_tickets.each do |ticket| %>
+        <div class ="card col-2 mx-2 p-4 rounded">
+            <div class="index">
+          <% event = ticket.event %>
+          <p><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
+          <p><i class="fa-solid fa-clock"></i> <%= ticket.start_time.hour %>:<%= ticket.start_time.min < 10 ? "0#{ticket.start_time.min}" : ticket.start_time.min %> - <%= ticket.end_time.hour %>:<%= ticket.end_time.min < 10 ? "0#{ticket.end_time.min}" : ticket.end_time.min %></p>
+          <p><i class="fa-solid fa-calendar-days"></i> <%= Time.parse(event.date.to_s).strftime("%d-%m-%Y") %></p>
+          <% if !ticket.guests.nil? %>
+            <p><i class="fa-solid fa-user"></i> x <%= ticket.guests %></p>
+          <% end %>
+          <p>This event takes place in <%= distance_of_time_in_words(event.date.to_time - Time.now) %></p>
+          <%= link_to "More info", event_path(event) %><br>
+          <%= link_to "Cancel ticket", ticket_path(ticket),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          </div>
         </div>
       <% end %>
       </div>
@@ -29,7 +32,12 @@
 
 <%# I sort the events that the user hosts %>
 <div class="index-body">
-  <h2 class="index-header my-4"><strong>My events</strong></h2>
+  <h2 class="index-header my-4">
+  <strong>My events</strong>
+  <% if @upcoming_events.length == 0 %>
+      <p style="color: grey; font-family: Poppins; font-weight: 250; font-size: 40px;">No events yet . . . </p>
+  <% end %>
+  </h2>
   <div class="container-fluid mx-5">
     <div class="row gy-4">
 <% @upcoming_events.each do |event| %>

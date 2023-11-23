@@ -1,7 +1,6 @@
 require "faker"
 require "json"
 require "open-uri"
-
 # Data for presentation
 
 puts "Cleaning database..."
@@ -48,11 +47,11 @@ event.photos.attach(io: photo, filename: 'Apple-Pie.jpg', content_type: 'img/jpg
 event.user = user
 event.save!
 event = Event.new(
-  venue: "OXO2",
+  venue: "Buckingham Palace",
   menu: "Beef Tartare, Ratatouille, Creme Brulee",
   cuisine: "French",
   price: price_array.sample,
-  description: "French cuisine-themed supper club by Marco Pierre White at OXO2 will promise an unforgettable evening, marrying the finesse of French culinary tradition with the chef's innovation and artistry, all set against the backdrop of a sophisticated and iconic London venue.",
+  description: "French cuisine-themed supper club by Marco Pierre White at Buckingham Palace will promise an unforgettable evening, marrying the finesse of French culinary tradition with the chef's innovation and artistry, all set against the backdrop of a sophisticated and iconic London venue.",
   capacity: capacity_array.sample,
   date: Faker::Date.forward(from: Date.today, days: 365)
 )
@@ -117,11 +116,11 @@ user = User.new(
 )
 user.save!
 event = Event.new(
-  venue: "The Rooftop Terrace at Trafalgar St. James",
+  venue: "Toklas",
   menu: "Bruschetta, Osso Buco, Tiramisu",
   cuisine: "Italian",
   price: price_array.sample,
-  description: "Wolfgang Puck's Italian cuisine-themed supper club at The Rooftop Terrace at Trafalgar St. James will promise a luxurious and refined culinary affair, blending the sophistication of Italian flavors, Wolfgang Puck's culinary innovation, and the stunning backdrop of London's skyline for an unforgettable dining experience.",
+  description: "Wolfgang Puck's Italian cuisine-themed supper club at Toklas will promise a luxurious and refined culinary affair, blending the sophistication of Italian flavors, Wolfgang Puck's culinary innovation, and the stunning backdrop of London's skyline for an unforgettable dining experience.",
   capacity: capacity_array.sample,
   date: Faker::Date.forward(from: Date.today, days: 365)
 )
@@ -132,7 +131,7 @@ event.photos.attach(io: photo, filename: 'Tiramisu.jpg', content_type: 'img/jpg'
 event.user = user
 event.save!
 event = Event.new(
-  venue: "The Hurlingham Club",
+  venue: "Hurlingham Club",
   menu: "Sashimi Platter, Tonkotsu Ramen, Dorayaki",
   cuisine: "Japanese",
   price: price_array.sample,
@@ -159,11 +158,11 @@ user = User.new(
 )
 user.save!
 event = Event.new(
-  venue: "The Vaults at Waterloo",
+  venue: "The Camberwell Arms",
   menu: "Tacos al Pastor, Chiles Rellenos, Churros",
   cuisine: "Mexican",
   price: price_array.sample,
-  description: "A supper club hosted by Nigella Lawson, showcasing Mexican cuisine at The Vaults at Waterloo, will be an immersive and vibrant dining experience that celebrates the bold and diverse flavors of Mexico, guided by Nigella Lawson's culinary expertise and flair, set within the unique and atmospheric backdrop of The Vaults.",
+  description: "A supper club hosted by Nigella Lawson, showcasing Mexican cuisine at The Camberwell Arms, will be an immersive and vibrant dining experience that celebrates the bold and diverse flavors of Mexico, guided by Nigella Lawson's culinary expertise and flair, set within the unique and atmospheric backdrop of The Vaults.",
   capacity: capacity_array.sample,
   date: Faker::Date.forward(from: Date.today, days: 365)
 )
@@ -218,11 +217,11 @@ event.photos.attach(io: photo, filename: 'Rum-Cake.jpg', content_type: 'img/jpg'
 event.user = user
 event.save!
 event = Event.new(
-  venue: "The Kitchen at Tower",
+  venue: "Westerns Laundry",
   menu: "Gambas al Ajillo, Seafood Paella, Crema Catalana",
   cuisine: "Spanish",
   price: price_array.sample,
-  description: "Ainsley Harriott's Spanish cuisine-themed supper club at The Kitchen at Tower will promise a dynamic and engaging culinary adventure, celebrating the vibrant flavors of Spain, Ainsley's culinary expertise, and The Kitchen at Tower's interactive atmosphere for an unforgettable and immersive dining experience.",
+  description: "Ainsley Harriott's Spanish cuisine-themed supper club at Westerns Laundry will promise a dynamic and engaging culinary adventure, celebrating the vibrant flavors of Spain, Ainsley's culinary expertise, and Westerns Laundry's interactive atmosphere for an unforgettable and immersive dining experience.",
   capacity: capacity_array.sample,
   date: Faker::Date.forward(from: Date.today, days: 365)
 )

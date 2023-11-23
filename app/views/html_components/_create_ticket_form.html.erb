@@ -1,8 +1,15 @@
 <%= simple_form_for [@user, @event, @ticket] do |f| %>
   <%= f.input :start_time, as: :string,
+              # label_html: {class: "d-block text-end"},
               input_html: { data: { controller: "timepickr" } } %>
   <%= f.input :end_time, as: :string,
+              # label_html: {class: "d-block text-end"},
               input_html: { data: { controller: "timepickr" } } %>
-  <%= f.input :guests, label: "Number of guests"  %>
-  <%= f.submit %>
+  <%= f.input :guests, label: "Number of guests" %>
+  <%= f.submit  %>
 <% end %>
+
+
+  <%# <div class="d-flex w-100 justify-content-end">
+    <%= f.submit class: "d-block text-end" %>
+  <%# </div>  %>

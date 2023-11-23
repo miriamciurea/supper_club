@@ -6,6 +6,11 @@
 @import "carousel";
 @import "map";
 @import "footer";
+@import "show";
+
+.flexbox {
+  display: flex;
+}
 
 .container-fluid {
   flex-direction: row;

@@ -1,0 +1,44 @@
+.container-show {
+  padding-left: 300px;
+  padding-right: 300px;
+  margin: auto;
+}
+
+.image-carousel-show {
+  margin-top: 24px;
+  border-radius: 5%;
+  overflow: hidden;
+  border-radius: 2%;
+  box-shadow: 10px 10px 10px #E5E5E5;
+}
+
+.text-and-form-show {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 50px
+}
+
+.text-show {
+  width: 50%;
+  margin-right: 16px;
+  padding: 16px;
+  border-radius: 5%;
+}
+
+.form-show {
+  width: 40%;
+  margin-left: 16px;
+  background-color: white;
+  box-shadow: 10px 10px 10px #E5E5E5;
+  padding: 16px;
+  border-radius: 2%;
+}
+
+.text-show h4 {
+  line-height: 2.5;
+}
+
+.text-show h5 {
+  line-height: 2;
+}
