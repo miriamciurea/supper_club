@@ -14,6 +14,12 @@ class EventsController < ApplicationController
         info_window_html: render_to_string(partial: "info_window", locals: {event: event}),
         marker_html: render_to_string(partial: "marker")
       }
+    @events = Event.order(:date)
+    if params[:query].present?
+      events = Event.global_search(params[:query])
+      @events = events.sort_by {|event| event.date}
+    else
+      @events = Event.all.sort_by {|event| event.date}
     end
   end
 
