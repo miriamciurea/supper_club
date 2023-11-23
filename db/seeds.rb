@@ -235,4 +235,16 @@ event.photos.attach(io: photo, filename: 'Crema-Catalana.jpg', content_type: 'im
 event.user = user
 event.save!
 
+# User 6
+
+user = User.new(
+  first_name: "Gordon",
+  last_name: "Ramsey",
+  email: "Gordon@lewagon.com",
+  password: "123456"
+)
+photo = URI.open('https://robbreport.com/wp-content/uploads/2018/04/gordon-ramsay-1-e1523056498302.jpg?w=1008')
+user.photo.attach(io: photo, filename: 'Gordon-Ramsey.jpg', content_type: 'img/jpg')
+user.save!
+
 puts "Finished!"
