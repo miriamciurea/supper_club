@@ -1,9 +1,8 @@
 
-<div class="container" style="position:absolute; width: 80%; margin: 5%;">
-  <div class="image-carousel">
-    <div class="card" style="position:absolute; width: 100%; height:100vh;">
+<div class="container-show">
+  <div class="image-carousel-show">
       <%# <img src="https://media.istockphoto.com/id/1403963902/photo/italian-pork-and-chickpea-soup-with-vegetables-close-up-in-a-bowl-horizontal.jpg?s=612x612&w=0&k=20&c=tOng2NnMAYkyrG-UHgNq0SpqvM9YExxaw6sGQWgEBy4=" class="card-img-top" alt="..."> %>
-      <div id="carouselExampleControls" class="carousel slide w-50" data-ride="carousel">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <% if @event.photos.attached? %>
             <% @event.photos.each_with_index do |photo, i| %>
@@ -34,26 +33,24 @@
         </a>
       </div>
     </div>
-    </div>
 
-  <div class="text-and-form">
+  <div class="text-and-form-show">
 
-    <div class="text">
-      <h3><p class="card-text">Menu</p></h3>
+    <div class="text-show">
       <div class="card-body" style="text-align: center" >
-        <h4 class="card-title my=3" >Chef: <%= @event.user.first_name %> <%= @event.user.last_name %></h4>
-        <h5 class="card-title my=3" >Cuisine: <%= @event.cuisine %></h5>
-        <h5 class="card-text my=3">Menu: </h5>
+        <p class="card-title my=3" >Chef: <%= @event.user.first_name %> <%= @event.user.last_name %></p>
+        <p class="card-title my=3" >Cuisine: <%= @event.cuisine %></p>
+        <p class="card-text my=3">Menu: </p>
         <%= @event.menu %>
-        <h5 class="card-text my=10">Description</h3>
+        <p class="card-text my=10">Description</h3>
         <%= @event.description %>
-        <h5 class="card-text my=3">Venue: <%= @event.venue %> </h5>
-        <h5 class="card-text my=3">Price: £<%= @event.price %> </h5>
+        <p class="card-text my=3">Venue: <%= @event.venue %> </p>
+        <p class="card-text my=3">Price: £<%= @event.price %> </p>
       </div>
     </div>
 
-    <div class="form">
-      <h5>Add event:</h5>
+    <div class="form-show">
+      <p>Add Event:</p>
       <div class="my-2">
         <%= render partial: "html_components/create_ticket_form", users: @user, events: @event, tickets: @ticket %>
       </div>

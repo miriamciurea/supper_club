@@ -4,6 +4,11 @@
 @import "form_legend_clear";
 @import "navbar";
 @import "carousel";
+@import "show";
+
+.flexbox {
+  display: flex;
+}
 
 .container-fluid {
   flex-direction: row;
