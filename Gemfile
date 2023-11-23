@@ -31,9 +31,13 @@ gem 'devise'
 
 gem 'cloudinary'
 
-gem "geocoder"
-gem "pg_search"
+gem "omniauth-google-oauth2"
 
+gem "omniauth-rails_csrf_protection"
+
+gem "geocoder"
+
+gem "pg_search"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
