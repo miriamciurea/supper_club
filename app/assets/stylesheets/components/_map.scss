@@ -1,3 +1,13 @@
+.map-div {
+  width: 851px;
+  height: 330px;
+  border-radius: 20px;
+  border: 2px;
+  margin: 50px auto;
+  box-shadow: 0px 2px 13.1px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.30);
+}
 .mapboxgl-popup {
   max-width: 200px;
 }
@@ -13,12 +23,11 @@
 
   &:hover {
     -ms-transform: scale(4.2);
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
+    -webkit-transform: scale(2.2);
+    transform: scale(2.2);
   }
 }
 
 .map-button {
-  background-color: rgb(203, 222, 211);
   border-radius: 30%;
 }
