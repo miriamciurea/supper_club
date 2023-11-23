@@ -100,10 +100,53 @@ event = Event.new(
 )
 photo = URI.open('https://images.immediate.co.uk/production/volatile/sites/30/2023/02/Samosa-chaat-fa816d1.jpg?quality=90&resize=556,505')
 event.photos.attach(io: photo, filename: 'Chaat-Samosa.jpg', content_type: 'img/jpg')
-photo = URI.open('https://www.kitchensanctuary.com/wp-content/uploads/2019/09/Chicken-Tikka-Masala-square-FS-51-500x500.jpg')
-event.photos.attach(io: photo, filename: 'Chicken-Tikka-Masala.jpg', content_type: 'img/jpg')
+photo = URI.open('https://c.ndtvimg.com/2022-07/33meqsb_chicken-tikka_625x300_08_July_22.png')
+event.photos.attach(io: photo, filename: 'Chicken-Tikka-Masala.jpg', content_type: 'img/png')
 photo = URI.open('https://static01.nyt.com/images/2023/10/19/multimedia/ND-Gulab-Jamun-tqgl/ND-Gulab-Jamun-tqgl-articleLarge.jpg')
 event.photos.attach(io: photo, filename: 'Gulab-Juman.jpg', content_type: 'img/jpg')
+event.user = user
+event.save!
+
+# User 3
+
+user = User.new(
+  first_name: "Wolfgang",
+  last_name: "Puck",
+  email: "Wolfgang@lewagon.com",
+  password: "123456"
+)
+user.save!
+event = Event.new(
+  venue: "The Rooftop Terrace at Trafalgar St. James",
+  menu: "Bruschetta, Osso Buco, Tiramisu",
+  cuisine: "Italian",
+  price: price_array.sample,
+  description: "Wolfgang Puck's Italian cuisine-themed supper club at The Rooftop Terrace at Trafalgar St. James will promise a luxurious and refined culinary affair, blending the sophistication of Italian flavors, Wolfgang Puck's culinary innovation, and the stunning backdrop of London's skyline for an unforgettable dining experience.",
+  capacity: capacity_array.sample,
+  date: Faker::Date.forward(from: Date.today, days: 365)
+)
+photo = URI.open('https://www.telegraph.co.uk/content/dam/Food%20and%20drink/scotchbeef/osso-buco-alamy.jpg?imwidth=680')
+event.photos.attach(io: photo, filename: 'Osso-Buco.jpg', content_type: 'img/jpg')
+photo = URI.open('https://static01.nyt.com/images/2017/04/05/dining/05COOKING-TIRAMISU1/05COOKING-TIRAMISU1-master768.jpg')
+event.photos.attach(io: photo, filename: 'Tiramisu.jpg', content_type: 'img/jpg')
+event.user = user
+event.save!
+event = Event.new(
+  venue: "The Hurlingham Club",
+  menu: "Sashimi Platter, Tonkotsu Ramen, Dorayaki",
+  cuisine: "Japanese",
+  price: price_array.sample,
+  description: "
+  A supper club orchestrated by Wolfgang Puck, featuring Japanese cuisine at The Hurlingham Club, will deliver an elegant and exclusive dining experience merging the precision of Japanese flavors with Wolfgang Puck's culinary artistry, set within the luxurious ambiance of The Hurlingham Club's refined surroundings.",
+  capacity: capacity_array.sample,
+  date: Faker::Date.forward(from: Date.today, days: 365)
+)
+photo = URI.open('https://www.mashed.com/img/gallery/the-real-difference-between-sushi-and-sashimi/intro-1613076229.jpg')
+event.photos.attach(io: photo, filename: 'Sashimi-Platter.jpg', content_type: 'img/jpg')
+photo = URI.open('https://i1.wp.com/seonkyounglongest.com/wp-content/uploads/2020/09/Easy-Tonkotsu-26-mini.jpg?fit=1000%2C667&ssl=1')
+event.photos.attach(io: photo, filename: 'Tonkotsu-Ramen.jpg', content_type: 'img/jpg')
+photo = URI.open('https://i.pinimg.com/736x/86/83/e3/8683e3ccbd6e684d961a0bf9dcc3b26e.jpg')
+event.photos.attach(io: photo, filename: 'Dorayaki.jpg', content_type: 'img/jpg')
 event.user = user
 event.save!
 
