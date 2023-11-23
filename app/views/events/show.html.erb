@@ -37,10 +37,9 @@
   <div class="text-and-form-show">
 
     <div class="text-show">
-      <h5><strong><%= @event.user.first_name %> <%= @event.user.last_name %></strong></h5>
-      <br>
-      <h6>£ <%= @event.price %> </h6>
-      <h6><%= @event.venue %> </h6>
+      <h4><strong><%= @event.user.first_name %> <%= @event.user.last_name %></strong></h4>
+      <h5><strong>£ <%= @event.price %></strong></h5>
+      <h5><%= @event.venue %> </h5>
       <p><em><%= @event.menu %></em></p>
       <p><%= @event.description %></p>
     </div>
