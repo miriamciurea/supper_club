@@ -8,5 +8,17 @@
 }
 
 .map-logo {
-  width: 80px;
+  width: 100%;
+  transition: 1.5s;
+
+  &:hover {
+    -ms-transform: scale(4.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+
+.map-button {
+  background-color: rgb(203, 222, 211);
+  border-radius: 30%;
 }

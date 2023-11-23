@@ -1,2 +1,7 @@
-<h2><%= event.venue %></h2>
-<p><%= event.user.first_name %> <%= event.user.last_name %></p>
+<%= link_to event_path(event) do %>
+<br>
+<p><strong><%= event.venue %></strong>
+<br>
+<%= event.cuisine %>
+</p>
+<% end %>
