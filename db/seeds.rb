@@ -136,8 +136,7 @@ event = Event.new(
   menu: "Sashimi Platter, Tonkotsu Ramen, Dorayaki",
   cuisine: "Japanese",
   price: price_array.sample,
-  description: "
-  A supper club orchestrated by Wolfgang Puck, featuring Japanese cuisine at The Hurlingham Club, will deliver an elegant and exclusive dining experience merging the precision of Japanese flavors with Wolfgang Puck's culinary artistry, set within the luxurious ambiance of The Hurlingham Club's refined surroundings.",
+  description: "A supper club orchestrated by Wolfgang Puck, featuring Japanese cuisine at The Hurlingham Club, will deliver an elegant and exclusive dining experience merging the precision of Japanese flavors with Wolfgang Puck's culinary artistry, set within the luxurious ambiance of The Hurlingham Club's refined surroundings.",
   capacity: capacity_array.sample,
   date: Faker::Date.forward(from: Date.today, days: 365)
 )
@@ -181,8 +180,7 @@ event = Event.new(
   menu: "Falafel and Hummus, Moussaka, Baklava",
   cuisine: "Mediterranean",
   price: price_array.sample,
-  description: "
-  A supper club orchestrated by Wolfgang Puck, featuring Japanese cuisine at The Hurlingham Club, will deliver an elegant and exclusive dining experience merging the precision of Japanese flavors with Wolfgang Puck's culinary artistry, set within the luxurious ambiance of The Hurlingham Club's refined surroundings.",
+  description: "Nigella Lawson's Mediterranean cuisine-themed supper club at The Cinnamon Club will promise an elegant and refined culinary journey through the diverse flavors of the Mediterranean, Nigella's innovative culinary expertise, and The Cinnamon Club's sophisticated ambiance for a memorable and luxurious dining experience.",
   capacity: capacity_array.sample,
   date: Faker::Date.forward(from: Date.today, days: 365)
 )
@@ -190,6 +188,50 @@ photo = URI.open('https://images.immediate.co.uk/production/volatile/sites/2/201
 event.photos.attach(io: photo, filename: 'Moussaka.jpg', content_type: 'img/jpg')
 photo = URI.open('https://www.yummytummyaarthi.com/wp-content/uploads/2015/07/Baklava-1.jpeg')
 event.photos.attach(io: photo, filename: 'Baklava.jpg', content_type: 'img/jpg')
+event.user = user
+event.save!
+
+# User 5
+
+user = User.new(
+  first_name: "Ainsley",
+  last_name: "Harriott",
+  email: "Ainsley@lewagon.com",
+  password: "123456"
+)
+user.save!
+event = Event.new(
+  venue: "Tobacco Dock",
+  menu: "Beef Patties, Carribean Chicken Stew, Rum Cake",
+  cuisine: "Carribean",
+  price: price_array.sample,
+  description: "This supper club orchestrated by Ainsley Harriott, featuring Caribbean cuisine at Tobacco Dock, will deliver a lively and flavorful dining experience that celebrates the vibrant spices, tropical ingredients, and cultural richness of the Caribbean, guided by Ainsley Harriott's infectious energy and culinary expertise, set within the versatile and spacious setting of Tobacco Dock.",
+  capacity: capacity_array.sample,
+  date: Faker::Date.forward(from: Date.today, days: 365)
+)
+photo = URI.open('https://images.immediate.co.uk/production/volatile/sites/2/2022/09/Jamaican-beef-patties-27f41ae.jpg?quality=90&webp=true&resize=800,533')
+event.photos.attach(io: photo, filename: 'Beef-Patties.jpg', content_type: 'img/jpg')
+photo = URI.open('https://www.foodfidelity.com/wp-content/uploads/2020/12/brown-stew-chicken-hor-best-1-1024x682.jpg.webp')
+event.photos.attach(io: photo, filename: 'Carribean-Chicken-Stew.jpg', content_type: 'img/jpg')
+photo = URI.open('https://thehappyfoodie.co.uk/wp-content/uploads/2021/08/ainsley-butter-rum-cake-3c1577f8-bf86-47fa-a955-f2ecd39250fa_s900x0_c3364x1964_l0x1536.jpg')
+event.photos.attach(io: photo, filename: 'Rum-Cake.jpg', content_type: 'img/jpg')
+event.user = user
+event.save!
+event = Event.new(
+  venue: "The Kitchen at Tower",
+  menu: "Gambas al Ajillo, Seafood Paella, Crema Catalana",
+  cuisine: "Spanish",
+  price: price_array.sample,
+  description: "Ainsley Harriott's Spanish cuisine-themed supper club at The Kitchen at Tower will promise a dynamic and engaging culinary adventure, celebrating the vibrant flavors of Spain, Ainsley's culinary expertise, and The Kitchen at Tower's interactive atmosphere for an unforgettable and immersive dining experience.",
+  capacity: capacity_array.sample,
+  date: Faker::Date.forward(from: Date.today, days: 365)
+)
+photo = URI.open('https://thehappyfoodie.co.uk/wp-content/uploads/2021/08/prawns-with-garlic_s900x0_c723x422_l45x182.jpg')
+event.photos.attach(io: photo, filename: 'Gambas-al-Ajillo.jpg', content_type: 'img/jpg')
+photo = URI.open('https://www.weightlossresources.co.uk/pimg/wlr/s/seafood-paella-article.jpg')
+event.photos.attach(io: photo, filename: 'Seafood-Paella.jpg', content_type: 'img/jpg')
+photo = URI.open('https://www.vzug.com/medias/sys_master/recipeimages/recipeimages/hac/h72/9690361593886/recipe-img.jpg')
+event.photos.attach(io: photo, filename: 'Crema-Catalana.jpg', content_type: 'img/jpg')
 event.user = user
 event.save!
 
