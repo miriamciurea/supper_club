@@ -1,23 +1,32 @@
 .container-show {
-  width: 720px;
+  width: 800px;
   margin: auto;
 }
 
 .image-carousel-show {
-
+border-radius: 5%;
+overflow: hidden;
+border-radius: 5%;
 }
 
 .text-and-form-show {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 100%;
   margin-top: 50px
 }
 
 .text-show {
   width: 50%;
+  margin-right: 32px;
+  padding: 16px;
+  border-radius: 5%;
 }
 
 .form-show {
-
+  margin-left: 32px;
+  background-color: white;
+  box-shadow: 2px 2px 2px #E5E5E5;
+  padding: 16px;
+  border-radius: 5%;
 }
