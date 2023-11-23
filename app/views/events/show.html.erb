@@ -37,15 +37,12 @@
   <div class="text-and-form-show">
 
     <div class="text-show">
-      <p>Chef: <%= @event.user.first_name %> <%= @event.user.last_name %></p>
-      <p>Cuisine: <%= @event.cuisine %></p>
-      <p>Menu: </p>
-      <p><%= @event.menu %></p>
-      <p>Description: </p>
+      <h5><strong><%= @event.user.first_name %> <%= @event.user.last_name %></strong></h5>
+      <br>
+      <h6>£ <%= @event.price %> </h6>
+      <h6><%= @event.venue %> </h6>
+      <p><em><%= @event.menu %></em></p>
       <p><%= @event.description %></p>
-      <p >Venue: </p>
-      <p> <%= @event.venue %> </p>
-      <p >Price: £<%= @event.price %> </p>
     </div>
 
     <div class="form-show">
