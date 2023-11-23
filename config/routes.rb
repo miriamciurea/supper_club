@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root to: "events#home"
-  devise_for :users
+  devise_for :users,
+    controllers: {
+      omniauth_callbacks: 'omniauth_callbacks'
+    }
+
   resources :users, only: :show, as: :profile
 
   resources :events do
