@@ -37,16 +37,15 @@
   <div class="text-and-form-show">
 
     <div class="text-show">
-      <div class="card-body" style="text-align: center" >
-        <p class="card-title my=3" >Chef: <%= @event.user.first_name %> <%= @event.user.last_name %></p>
-        <p class="card-title my=3" >Cuisine: <%= @event.cuisine %></p>
-        <p class="card-text my=3">Menu: </p>
-        <%= @event.menu %>
-        <p class="card-text my=10">Description</h3>
-        <%= @event.description %>
-        <p class="card-text my=3">Venue: <%= @event.venue %> </p>
-        <p class="card-text my=3">Price: £<%= @event.price %> </p>
-      </div>
+      <p>Chef: <%= @event.user.first_name %> <%= @event.user.last_name %></p>
+      <p>Cuisine: <%= @event.cuisine %></p>
+      <p>Menu: </p>
+      <p><%= @event.menu %></p>
+      <p>Description: </p>
+      <p><%= @event.description %></p>
+      <p >Venue: </p>
+      <p> <%= @event.venue %> </p>
+      <p >Price: £<%= @event.price %> </p>
     </div>
 
     <div class="form-show">
