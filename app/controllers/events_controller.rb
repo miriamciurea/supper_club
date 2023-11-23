@@ -7,6 +7,22 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    @markers = @events.geocoded.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {event: event}),
+        marker_html: render_to_string(partial: "marker")
+      }
+    end
+
+    @events = Event.order(:date)
+    if params[:query].present?
+      events = Event.global_search(params[:query])
+      @events = events.sort_by {|event| event.date}
+    else
+      @events = Event.all.sort_by {|event| event.date}
+    end
   end
 
   def show
