@@ -12,10 +12,7 @@ class User < ApplicationRecord
     create_with(uid: user[:uid], provider: 'google_oauth2',
                 password: Devise.friendly_token[0, 20]).find_or_create_by!(email: user[:email])
   end
-
   # def self.from_google(attr = {})
   #   find_or_create_by(email: attr[:email], uid: attr[:uid], provider: 'google_oauth2')
   # end
-
-
 end
