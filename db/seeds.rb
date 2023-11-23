@@ -150,4 +150,47 @@ event.photos.attach(io: photo, filename: 'Dorayaki.jpg', content_type: 'img/jpg'
 event.user = user
 event.save!
 
+# User 4
+
+user = User.new(
+  first_name: "Nigella",
+  last_name: "Lawson",
+  email: "Wolfgang@lewagon.com",
+  password: "123456"
+)
+user.save!
+event = Event.new(
+  venue: "The Vaults at Waterloo",
+  menu: "Tacos al Pastor, Chiles Rellenos, Churros",
+  cuisine: "Mexican",
+  price: price_array.sample,
+  description: "A supper club hosted by Nigella Lawson, showcasing Mexican cuisine at The Vaults at Waterloo, will be an immersive and vibrant dining experience that celebrates the bold and diverse flavors of Mexico, guided by Nigella Lawson's culinary expertise and flair, set within the unique and atmospheric backdrop of The Vaults.",
+  capacity: capacity_array.sample,
+  date: Faker::Date.forward(from: Date.today, days: 365)
+)
+photo = URI.open('https://www.seriouseats.com/thmb/FxO0v2K8bEp8rhvMxuqmMCnhWcg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__images__2013__04__20130427-tacos-al-pastor-new-39-c85035f8465743729e61e16991821d14.jpg')
+event.photos.attach(io: photo, filename: 'Tacos-al-Pastor.jpg', content_type: 'img/jpg')
+photo = URI.open('https://www.tasteofhome.com/wp-content/uploads/2021/12/Chiles-Rellenos-FT_Ericka-Sanchez-for-Taste-of-Home.jpg?fit=680%2C454')
+event.photos.attach(io: photo, filename: 'Chiles-Rellenos.jpg', content_type: 'img/jpg')
+photo = URI.open('https://www.redpathsugar.com/sites/redpathsugar_com/files/styles/m/public/Churros_Dulce_de_Leche_500x400.jpg.webp?itok=1zmVpkTF')
+event.photos.attach(io: photo, filename: 'Churros.jpg', content_type: 'img/jpg')
+event.user = user
+event.save!
+event = Event.new(
+  venue: "The Cinnamon Club",
+  menu: "Falafel and Hummus, Moussaka, Baklava",
+  cuisine: "Mediterranean",
+  price: price_array.sample,
+  description: "
+  A supper club orchestrated by Wolfgang Puck, featuring Japanese cuisine at The Hurlingham Club, will deliver an elegant and exclusive dining experience merging the precision of Japanese flavors with Wolfgang Puck's culinary artistry, set within the luxurious ambiance of The Hurlingham Club's refined surroundings.",
+  capacity: capacity_array.sample,
+  date: Faker::Date.forward(from: Date.today, days: 365)
+)
+photo = URI.open('https://images.immediate.co.uk/production/volatile/sites/2/2019/06/Olive_VeggieMoussaka-b91289a.jpg?resize=768,574')
+event.photos.attach(io: photo, filename: 'Moussaka.jpg', content_type: 'img/jpg')
+photo = URI.open('https://www.yummytummyaarthi.com/wp-content/uploads/2015/07/Baklava-1.jpeg')
+event.photos.attach(io: photo, filename: 'Baklava.jpg', content_type: 'img/jpg')
+event.user = user
+event.save!
+
 puts "Finished!"
