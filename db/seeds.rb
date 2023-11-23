@@ -155,7 +155,7 @@ event.save!
 user = User.new(
   first_name: "Nigella",
   last_name: "Lawson",
-  email: "Wolfgang@lewagon.com",
+  email: "Nigella@lewagon.com",
   password: "123456"
 )
 user.save!
