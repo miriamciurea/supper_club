@@ -1,11 +1,11 @@
 .container-show {
-  padding-left: 300px;
-  padding-right: 300px;
+  padding-left: 20%;
+  padding-right: 20%;
   margin: auto;
 }
 
 .image-carousel-show {
-  margin-top: 24px;
+  margin-top: 28px;
   border-radius: 5%;
   overflow: hidden;
   border-radius: 2%;
@@ -16,7 +16,8 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: 50px
+  margin-top: 56px;
+  margin-bottom: 56px;
 }
 
 .text-show {
@@ -41,4 +42,26 @@
 
 .text-show h5 {
   line-height: 2;
+}
+
+.create-btn {
+  color: black;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.02);
+  width: Fixed (162px);
+  height: Fixed (65px);
+  padding: 8px;
+  border-radius: 32px;
+  border: 2px;
+  gap: 8px;
+  padding: 10px 24px !important;
+  border: 2px solid #FFF;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.50) 6.26%, rgba(255, 255, 255, 0.00) 93.85%);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(2px);
+  transition: 0.3s;
+
+  &:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.00) 93.85%, rgba(255, 255, 255, 0.50) 6.26%);
+    border: 2px solid #0d6efd;
+  }
 }

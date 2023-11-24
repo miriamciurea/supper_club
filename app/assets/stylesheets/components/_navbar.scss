@@ -17,8 +17,8 @@
 
 .events {
   font-family: Poppins;
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 350;
   line-height: 18px;
   letter-spacing: 0em;
   text-align: center;
@@ -48,4 +48,14 @@
   &:hover {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.00) 93.85%, rgba(255, 255, 255, 0.50) 6.26%);
   }
+}
+.avatar-default {
+  // border-radius: 100px;
+  // border: 2px solid #FFF;
+  // background: linear-gradient(135deg, rgba(255, 255, 255, 0.50) 6.26%, rgba(255, 255, 255, 0.00) 93.85%);
+  // box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  // backdrop-filter: blur(2px);
+  // padding: 10px;
+  width: 25px;
+  margin-top: 0;
 }
