@@ -27,6 +27,8 @@
 .index-main-img {
   width: 933.71px;
   height: 580.32px;
+  position: relative;
+  z-index: -100;
 }
 .header-container {
   padding: 0 50px;
@@ -74,8 +76,62 @@
 
 .search-form {
   border-radius: 32px;
+  z-index: 100;
 }
 
-.cards {
+.card {
   padding: 0 50px;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 50px;
+  border-radius: 20px !important;
+  background: #FBFBFB;
+  box-shadow: 0px 11px 13.1px 1px rgba(0, 0, 0, 0.25);
+  transition: 2s;
+  padding-top: 0 !important;
+
+  &:hover {
+    -ms-transform: scale(1.1);
+	  -webkit-transform: scale(1.1);
+	  transform: scale(1.1);
+  }
+
+}
+.cards {
+  justify-content: center;
+}
+.card-image {
+  width: 300px;
+  height: 180px;
+  border-radius: 20px;
+}
+
+.chef {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 18px;
+  margin-top: 10px;
+}
+.chef, .venue, .cuisine, .date {
+  text-align: left;
+  margin-left: 20px;
+}
+.price {
+  text-align: right;
+  margin-right: 20px;
+}
+.chef, .venue, .cuisine {
+  margin-bottom: 8px !important;
+}
+.venue, .cuisine, .date, .price {
+  color: #000;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 18px;
 }
