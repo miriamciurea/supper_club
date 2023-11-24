@@ -8,11 +8,12 @@
   </div>
 
 
-   <div class="profile-row ">
+   <div class="profile-row cards">
     <% if @upcoming_events.length == 0 %>
       <p style="color: grey; font-family: Poppins; font-weight: 250; font-size: 40px;">No events yet . . . </p>
     <% end %>
     <% @upcoming_events.each do |event| %>
+
       <div class="card col-2 mx-3 p-4 rounded">
           <%= link_to event_path(event) do %>
             <%= cl_image_tag event.photos.first.key, class: "card-image" %>
@@ -21,6 +22,7 @@
               <p class="venue"><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
               <p class="price"><i class="fa-solid fa-sterling-sign"></i> <%= event.price.to_i %></p>
             </div>
+
             <p class="cuisine"><i class="fa-solid fa-utensils"></i> <%= event.cuisine %></p>
             <div class="edit-actions d-flex justify-content-end">
                 <p class="date" style="width: 253px;"><i class="fa-solid fa-calendar-days"></i> <%= event.date %></p>
@@ -33,7 +35,7 @@
                   <%end%>
             </div>
           <% end%>
-
+        </div>
     </div>
     <% end %>
   </div>
@@ -44,10 +46,9 @@
   <div class="header-div-two-profile">
     <div class="event-header-profile"><strong>My Tickets</strong></div>
   </div>
-
-  <div class="profile-row">
-    <% if @upcoming_events.length == 0 %>
-      <p style="color: grey; font-family: Poppins; font-weight: 250; font-size: 40px;">No events yet . . . </p>
+  <div class="profile-row cards">
+    <% if @valid_tickets.length == 0 %>
+      <p style="color: grey; font-family: Poppins; font-weight: 250; font-size: 40px;">No tickets yet . . . </p>
     <% end %>
       <% @valid_tickets.each do |ticket| %>
         <div class ="card col-2 mx-3 p-4 rounded">
