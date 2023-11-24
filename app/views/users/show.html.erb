@@ -38,8 +38,8 @@
   </div>
 
   <div class="row cards">
-    <% if @upcoming_events.length == 0 %>
-      <p style="color: grey; font-family: Poppins; font-weight: 250; font-size: 40px;">No events yet . . . </p>
+    <% if @valid_tickets.length == 0 %>
+      <p style="color: grey; font-family: Poppins; font-weight: 250; font-size: 40px;">No tickets yet . . . </p>
     <% end %>
       <% @valid_tickets.each do |ticket| %>
         <div class ="card col-2 mx-3 p-4 rounded">

@@ -88,46 +88,6 @@
 
 .card {
   padding: 0 50px;
-  position: relative;
-  height: 100px;
-}
-
-.log-in {
-  background: #2753a6;
-  color: rgb(77, 75, 75);
-  text-align: center;
-  width: 100%;
-}
-
-.log-in:hover {
-  color: rgb(236, 243, 237)
-}
-
-// .signup-forget {
-//   display: flex;
-//   background-color: white;
-//   color: black;
-//   justify-content: space-around;
-// }
-
-.sign-up {
-  width: 50%;
-  background-color: rgb(185, 190, 190);
-  padding: 12px;
-  border-radius: 12px;
-  margin-top: 15px;
-}
-
-.forgot-pw {
-  width: 50%;
-  background-color: rgb(185, 185, 184);
-  padding: 12px;
-  border-radius: 12px;
-  margin-top: 15px;
-}
-
-.google-signin {
-  text-decoration: none;
   width: 300px;
   height: 300px;
   margin-bottom: 50px;
@@ -181,4 +141,49 @@
   font-style: normal;
   font-weight: 300;
   line-height: 18px;
+}
+
+
+// position: relative;
+//   height: 100px;
+// }
+
+.log-in {
+  background: #2753a6;
+  color: rgb(77, 75, 75);
+  text-align: center;
+  width: 100%;
+}
+
+.log-in:hover {
+  color: rgb(236, 243, 237)
+}
+
+// .signup-forget {
+//   display: flex;
+//   background-color: white;
+//   color: black;
+//   justify-content: space-around;
+// }
+
+.sign-up {
+  width: 50%;
+  background-color: rgb(185, 190, 190);
+  padding: 12px;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+.forgot-pw {
+  width: 50%;
+  background-color: rgb(185, 185, 184);
+  padding: 12px;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+.google-signin {
+  a {
+    text-decoration: none;
+  }
 }
