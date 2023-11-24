@@ -1,4 +1,4 @@
-<<div class="index-body">
+<div class="index-body">
 
   <div class="header-div-one-profile">
     <div class="ticket-header-profile"><strong>My Events</strong></div>
@@ -17,16 +17,24 @@
           <div>
               <div class="index">
                 <%= link_to event_path(event) do %>
+                <% if event.photos.attached? %>
                 <%= cl_image_tag event.photos.first.key, class: "card-image" %>
+                <% else %>
+                <%= image_tag 'default-img.png', alt: "default-event-image", class: 'carousel-img d-block card-image' %>
+                <% end %>
                 <p class="venue"><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
                 <p class="cuisine"><i class="fa-solid fa-utensils"></i> <%= event.cuisine %></p>
                 <div class="d-flex justify-content-between">
                 <p class="date"><i class="fa-solid fa-calendar-days"></i> <%= event.date %></p>
                 <p class="price"><i class="fa-solid fa-sterling-sign"></i> <%= event.price.to_i %></p>
               <% end%>
-              <%= link_to "Edit event", edit_event_path(event)%>
-              <%= link_to "Delete event", event_path(event),
-              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+              <%= link_to edit_event_path(event) do %>
+                <i class="fa-solid fa-pen-to-square"></i>
+              <% end %>
+              <%= link_to event_path(event),
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                <i class="fa-solid fa-trash-can"></i>
+              <% end %>
               </div>
               </div>
       <% end %>
@@ -54,7 +62,11 @@
             <div class="index">
               <% event = ticket.event %>
               <%= link_to event_path(event) do %>
+              <% if event.photos.attached? %>
               <%= cl_image_tag event.photos.first.key, class: "card-image" %>
+              <% else %>
+              <%= image_tag 'default-img.png', alt: "default-event-image", class: 'carousel-img d-block card-image' %>
+              <% end %>
               <p class="chef"><iconify-icon icon="mdi:chef-hat"> <%= event.user.first_name %> <%= event.user.last_name %></p>
               <p class="venue"><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
               <p class="cuisine"><i class="fa-solid fa-utensils"></i> <%= event.cuisine %></p>
@@ -62,7 +74,7 @@
               <p class="date"><i class="fa-solid fa-calendar-days"></i> <%= event.date %></p>
               <p class="price"><i class="fa-solid fa-sterling-sign"></i> <%= event.price.to_i %></p>
               <% end %>
-            <%= link_to user_path(user),
+            <%= link_to profile_path(current_user),
               method: :delete,
               data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
               <i class="fa-solid fa-trash-can"></i>
