@@ -14,20 +14,26 @@
     <% end %>
     <% @upcoming_events.each do |event| %>
       <div class="card col-2 mx-3 p-4 rounded">
-        <div class="index">
           <%= link_to event_path(event) do %>
             <%= cl_image_tag event.photos.first.key, class: "card-image" %>
-            <p class="venue"><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
+
+            <div class="ven-details d-flex justify-content-between">
+              <p class="venue"><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
+              <p class="price"><i class="fa-solid fa-sterling-sign"></i> <%= event.price.to_i %></p>
+            </div>
             <p class="cuisine"><i class="fa-solid fa-utensils"></i> <%= event.cuisine %></p>
-            <div class="d-flex justify-content-between">
-            <p class="date"><i class="fa-solid fa-calendar-days"></i> <%= event.date %></p>
-            <p class="price"><i class="fa-solid fa-sterling-sign"></i> <%= event.price.to_i %></p>
+            <div class="edit-actions d-flex justify-content-end">
+                <p class="date" style="width: 253px;"><i class="fa-solid fa-calendar-days"></i> <%= event.date %></p>
+                <%= link_to edit_event_path(event) do %>
+                <i class="fa-solid fa-pen-to-square"></i>
+                <% end %>
+                <%= link_to event_path(event),
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                  <i class="fa-solid fa-trash"></i>
+                  <%end%>
+            </div>
           <% end%>
-            <%= link_to "Edit event", edit_event_path(event)%>
-            <%= link_to "Delete event", event_path(event),
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-          </div>
-        </div>
+
     </div>
     <% end %>
   </div>
@@ -45,21 +51,29 @@
     <% end %>
       <% @valid_tickets.each do |ticket| %>
         <div class ="card col-2 mx-3 p-4 rounded">
-            <div class="index">
+
               <% event = ticket.event %>
               <%= link_to event_path(event) do %>
                 <%= cl_image_tag event.photos.first.key, class: "card-image" %>
-                  <p class="chef"><iconify-icon icon="mdi:chef-hat" ></iconify-icon> <%= event.user.first_name %> <%= event.user.last_name %></p>
+
+
+                  <div class="d-flex justify-content-between">
+                    <p class="chef"><iconify-icon icon="mdi:chef-hat" ></iconify-icon> <%= event.user.first_name %> <%= event.user.last_name %></p>
+                    <p class="price" id="ticket-price"><i class="fa-solid fa-sterling-sign"></i> <%= event.price.to_i %></p>
+                  </div>
                   <p class="venue"><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
                   <p class="cuisine"><i class="fa-solid fa-utensils"></i> <%= event.cuisine %></p>
-                    <div class="d-flex justify-content-between">
-                      <p class="date"><i class="fa-solid fa-calendar-days"></i> <%= event.date %></p>
-                      <p class="price"><i class="fa-solid fa-sterling-sign"></i> <%= event.price.to_i %></p>
+                    <div class="edit-actions d-flex justify-content-end">
+                      <p class="date" style="width: 253px;"><i class="fa-solid fa-calendar-days"></i> <%= event.date %></p>
+                      <%= link_to edit_event_path(event) do %>
+                      <i class="fa-solid fa-pen-to-square"></i>
                       <% end %>
-                      <%= link_to "Delete ticket", ticket_path(ticket)%>
+                      <%= link_to event_path(event),
+                      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                        <i class="fa-solid fa-trash"></i>
+                        <%end%>
                     </div>
-
-            </div>
+                    <% end%>
         </div>
       <% end %>
     </div>
