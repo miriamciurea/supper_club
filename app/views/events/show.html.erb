@@ -39,12 +39,13 @@
       <h4><strong><%= @event.user.first_name %> <%= @event.user.last_name %></strong></h4>
       <h5><strong>£ <%= @event.price %></strong></h5>
       <h5><%= @event.venue %> </h5>
+      <p><%= @event.date %><p>
       <p><em><%= @event.menu %></em></p>
       <p><%= @event.description %></p>
     </div>
 
     <div class="form-show">
-      <p>Add Event:</p>
+      <%# <p>Add Event:</p> %>
       <div class="my-2">
         <%= render partial: "html_components/create_ticket_form", users: @user, events: @event, tickets: @ticket %>
       </div>
