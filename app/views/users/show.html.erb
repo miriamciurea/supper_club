@@ -1,53 +1,59 @@
-<div class="container-profile">
+<div class="index-body">
 
   <div class="header-div-one-profile">
     <div class="ticket-header-profile"><strong>My Tickets</strong></div>
-    <div class="event-button-profile">
-      <button><%= link_to "Add Event", new_event_path %></button>
-    </div>
+
   </div>
 
-  <div class="list-tickets-profile">
+     <div class="row cards">
     <% if @upcoming_events.length == 0 %>
       <p style="color: grey; font-family: Poppins; font-weight: 250; font-size: 40px;">No events yet . . . </p>
     <% end %>
-    <% @valid_tickets.each do |ticket| %>
-      <div class="ticket-card-profile">
-        <% event = ticket.event %>
-        <p><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
-        <p><i class="fa-solid fa-clock"></i> <%= ticket.start_time.hour %>:<%= ticket.start_time.min < 10 ? "0#{ticket.start_time.min}" : ticket.start_time.min %> - <%= ticket.end_time.hour %>:<%= ticket.end_time.min < 10 ? "0#{ticket.end_time.min}" : ticket.end_time.min %></p>
-        <p><i class="fa-solid fa-calendar-days"></i> <%= Time.parse(event.date.to_s).strftime("%d-%m-%Y") %></p>
-        <% if !ticket.guests.nil? %>
-          <p><i class="fa-solid fa-user"></i> x <%= ticket.guests %></p>
-        <% end %>
-        <p>This event takes place in <%= distance_of_time_in_words(event.date.to_time - Time.now) %></p>
-        <%= link_to "More info", event_path(event) %><br>
-        <%= link_to "Cancel ticket", ticket_path(ticket),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-      </div>
-    <% end %>
-  </div>
+      <% @valid_tickets.each do |ticket| %>
+        <div class ="card col-2 mx-3 p-4 rounded">
+            <div class="index">
+              <% event = ticket.event %>
+              <%= cl_image_tag event.photos.first.key, class: "card-image" %>
+              <p class="chef"><iconify-icon icon="mdi:chef-hat"> <%= event.user.first_name %> <%= event.user.last_name %></p>
+              <p class="venue"><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
+              <p class="cuisine"><i class="fa-solid fa-utensils"></i> <%= event.cuisine %></p>
+              <div class="d-flex justify-content-between">
+              <p class="date"><i class="fa-solid fa-calendar-days"></i> <%= event.date %></p>
+              <p class="price"><i class="fa-solid fa-sterling-sign"></i> <%= event.price.to_i %></p>
+              </div>
+              <%= link_to "", event_path(event), class: 'stretched-link' %>
+            </div>
+          </th>
+        </div>
+      <% end %>
+    </div>
 
   <div class="header-div-two-profile">
     <div class="event-header-profile"><strong>My Events</strong></div>
+    <div class="event-button-profile">
+      <button class="profile-button"><%= link_to "Add Event", new_event_path %></button>
+    </div>
   </div>
 
-  <div class="list-events-profile">
+   <div class="row cards">
     <% if @upcoming_events.length == 0 %>
       <p style="color: grey; font-family: Poppins; font-weight: 250; font-size: 40px;">No events yet . . . </p>
     <% end %>
-    <% @upcoming_events.each do |event| %>
-      <div class="event-card-profile">
-        <p><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
-        <p>Capacity: <%= event.capacity %></p>
-        <p><i class="fa-solid fa-calendar-days"></i> <%= Time.parse(event.date.to_s).strftime("%d-%m-%Y") %></p>
-        <p>This event takes place in <%= distance_of_time_in_words(event.date.to_time - Time.now) %></p>
-        <%= link_to "More info", event_path(event) %><br>
-        <%= link_to "Edit event", edit_event_path(event) %><br>
-        <%= link_to "Cancel event", event_path(event),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-      </div>
-    <% end %>
-  </div>
+      <% @upcoming_events.each do |event| %>
+        <div class ="card col-2 mx-3 p-4 rounded">
+            <div class="index">
+              <%= cl_image_tag event.photos.first.key, class: "card-image" %>
+              <p class="venue"><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
+              <p class="cuisine"><i class="fa-solid fa-utensils"></i> <%= event.cuisine %></p>
+              <div class="d-flex justify-content-between">
+              <p class="date"><i class="fa-solid fa-calendar-days"></i> <%= event.date %></p>
+              <p class="price"><i class="fa-solid fa-sterling-sign"></i> <%= event.price.to_i %></p>
+              </div>
+              <%= link_to "", event_path(event), class: 'stretched-link' %>
+            </div>
+          </th>
+        </div>
+      <% end %>
+    </div>
 
 </div>
