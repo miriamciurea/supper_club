@@ -1,0 +1,55 @@
+.container-profile {
+  margin-left: 100px;
+  margin-right: 100px;
+  border: solid 5px black
+}
+
+.header-div-one-profile {
+  // width: 100%;
+  display: flex;
+  border: solid 5px gray;
+  margin: 16px;
+  justify-content: space-between;
+}
+.ticket-header-profile {
+  font-family: megrim;
+}
+
+.event-button-profile {
+  text-decoration: none;
+}
+
+.list-tickets-profile {
+  border: solid 5px red;
+  margin: 16px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.ticket-card-profile {
+  border: solid 5px blue;
+  margin: 16px;
+}
+
+.header-div-two-profile {
+  display: flex;
+  border: solid 5px gray;
+  margin: 16px;
+  justify-content: space-between;
+}
+
+.event-header-profile {
+  font-family: megrim;
+}
+
+.list-events-profile {
+  border: solid 5px red;
+  margin: 16px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.event-card-profile {
+  border: solid 5px blue;
+  margin: 16px;
+}
