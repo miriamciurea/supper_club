@@ -14,19 +14,27 @@
     <% end %>
       <% @upcoming_events.each do |event| %>
         <div class ="card col-2 mx-3 p-4 rounded">
-            <div class="index">
-              <%= cl_image_tag event.photos.first.key, class: "card-image" %>
-              <p class="venue"><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
-              <p class="cuisine"><i class="fa-solid fa-utensils"></i> <%= event.cuisine %></p>
-              <div class="d-flex justify-content-between">
-              <p class="date"><i class="fa-solid fa-calendar-days"></i> <%= event.date %></p>
-              <p class="price"><i class="fa-solid fa-sterling-sign"></i> <%= event.price.to_i %></p>
+          <div>
+              <div class="index">
+                <%= link_to event_path(event) do %>
+                <%= cl_image_tag event.photos.first.key, class: "card-image" %>
+                <p class="venue"><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
+                <p class="cuisine"><i class="fa-solid fa-utensils"></i> <%= event.cuisine %></p>
+                <div class="d-flex justify-content-between">
+                <p class="date"><i class="fa-solid fa-calendar-days"></i> <%= event.date %></p>
+                <p class="price"><i class="fa-solid fa-sterling-sign"></i> <%= event.price.to_i %></p>
+              <% end%>
+              <%= link_to "Edit event", edit_event_path(event)%>
+              <%= link_to "Delete event", event_path(event),
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
               </div>
-              <%= link_to "", event_path(event), class: 'stretched-link' %>
-            </div>
+              </div>
+      <% end %>
+
+
+           </div>
           </th>
         </div>
-      <% end %>
     </div>
 
 
@@ -43,8 +51,10 @@
     <% end %>
       <% @valid_tickets.each do |ticket| %>
         <div class ="card col-2 mx-3 p-4 rounded">
+          <div>
             <div class="index">
               <% event = ticket.event %>
+              <%= link_to event_path(event) do %>
               <%= cl_image_tag event.photos.first.key, class: "card-image" %>
               <p class="chef"><iconify-icon icon="mdi:chef-hat"> <%= event.user.first_name %> <%= event.user.last_name %></p>
               <p class="venue"><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
@@ -52,9 +62,11 @@
               <div class="d-flex justify-content-between">
               <p class="date"><i class="fa-solid fa-calendar-days"></i> <%= event.date %></p>
               <p class="price"><i class="fa-solid fa-sterling-sign"></i> <%= event.price.to_i %></p>
+              <% end %>
+            <%= link_to "Delete ticket", ticket_path(ticket)%>
               </div>
-              <%= link_to "", event_path(event), class: 'stretched-link' %>
             </div>
+            <div>
           </th>
         </div>
       <% end %>
