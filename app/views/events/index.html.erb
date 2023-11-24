@@ -20,7 +20,7 @@
       <% @events.each do |event| %>
         <div class ="card col-2 mx-2 p-4 rounded">
             <div class="index">
-              <h5><strong> 🧑‍🍳 <%= event.user.first_name %> <%= event.user.last_name %></strong></h5>
+              <h5><strong><iconify-icon icon="mdi:chef-hat"></iconify-icon> <%= event.user.first_name %> <%= event.user.last_name %></strong></h5>
               <p><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
               <p><i class="fa-solid fa-utensils"></i> <%= event.cuisine %></p>
               <p><i class="fa-solid fa-calendar-days"></i> <%= event.date %></p>
