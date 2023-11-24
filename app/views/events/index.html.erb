@@ -3,8 +3,8 @@
     <h1 class="index-header my-4"><strong>Upcoming Events</strong></h1>
     <%= image_tag 'index-image.png', alt: "index-image", class: "index-main-img"%>
   </div>
-    <div class="container-fluid">
-      <div class="row justify-content-center form">
+    <div class="container-fluid" style="margin-top: -250px;">
+      <div class="row justify-content-center form mb-4">
         <div class="col-sm-8 my-3">
           <%= form_with url: events_path, method: :get, class: "d-flex" do %>
           <%= text_field_tag :query,
@@ -18,13 +18,16 @@
       </div>
     <div class="row cards">
       <% @events.each do |event| %>
-        <div class ="card col-2 mx-2 p-4 rounded">
+        <div class ="card col-2 mx-3 p-4 rounded">
             <div class="index">
-              <h5><strong> 🧑‍🍳 <%= event.user.first_name %> <%= event.user.last_name %></strong></h5>
-              <p><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
-              <p><i class="fa-solid fa-utensils"></i> <%= event.cuisine %></p>
-              <p><i class="fa-solid fa-calendar-days"></i> <%= event.date %></p>
-              <p><i class="fa-solid fa-sterling-sign"></i> <%= event.price %></p>
+              <%= cl_image_tag event.photos.first.key, class: "card-image" %>
+              <h5 class="chef"><strong> 🧑‍🍳 <%= event.user.first_name %> <%= event.user.last_name %></strong></h5>
+              <p class="venue"><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
+              <p class="cuisine"><i class="fa-solid fa-utensils"></i> <%= event.cuisine %></p>
+              <div class="d-flex justify-content-between">
+              <p class="date"><i class="fa-solid fa-calendar-days"></i> <%= event.date %></p>
+              <p class="price"><i class="fa-solid fa-sterling-sign"></i> <%= event.price %></p>
+              </div>
               <%= link_to "", event_path(event), class: 'stretched-link' %>
             </div>
           </th>
