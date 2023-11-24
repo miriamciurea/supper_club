@@ -1,20 +1,21 @@
 <div class="index-body">
 
   <div class="header-div-one-profile">
-    <div class="ticket-header-profile"><strong>My Tickets</strong></div>
-
+    <div class="ticket-header-profile"><strong>My Events</strong></div>
+    <div class="event-button-profile">
+      <button class="profile-button"><%= link_to "Add Event", new_event_path %></button>
+    </div>
   </div>
 
-     <div class="row cards">
+
+   <div class="row cards">
     <% if @upcoming_events.length == 0 %>
       <p style="color: grey; font-family: Poppins; font-weight: 250; font-size: 40px;">No events yet . . . </p>
     <% end %>
-      <% @valid_tickets.each do |ticket| %>
+      <% @upcoming_events.each do |event| %>
         <div class ="card col-2 mx-3 p-4 rounded">
             <div class="index">
-              <% event = ticket.event %>
               <%= cl_image_tag event.photos.first.key, class: "card-image" %>
-              <p class="chef"><iconify-icon icon="mdi:chef-hat"> <%= event.user.first_name %> <%= event.user.last_name %></p>
               <p class="venue"><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
               <p class="cuisine"><i class="fa-solid fa-utensils"></i> <%= event.cuisine %></p>
               <div class="d-flex justify-content-between">
@@ -28,21 +29,24 @@
       <% end %>
     </div>
 
+
+
+
   <div class="header-div-two-profile">
-    <div class="event-header-profile"><strong>My Events</strong></div>
-    <div class="event-button-profile">
-      <button class="profile-button"><%= link_to "Add Event", new_event_path %></button>
-    </div>
+    <div class="event-header-profile"><strong>My Tickets</strong></div>
+
   </div>
 
-   <div class="row cards">
+  <div class="row cards">
     <% if @upcoming_events.length == 0 %>
       <p style="color: grey; font-family: Poppins; font-weight: 250; font-size: 40px;">No events yet . . . </p>
     <% end %>
-      <% @upcoming_events.each do |event| %>
+      <% @valid_tickets.each do |ticket| %>
         <div class ="card col-2 mx-3 p-4 rounded">
             <div class="index">
+              <% event = ticket.event %>
               <%= cl_image_tag event.photos.first.key, class: "card-image" %>
+              <p class="chef"><iconify-icon icon="mdi:chef-hat"> <%= event.user.first_name %> <%= event.user.last_name %></p>
               <p class="venue"><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
               <p class="cuisine"><i class="fa-solid fa-utensils"></i> <%= event.cuisine %></p>
               <div class="d-flex justify-content-between">
