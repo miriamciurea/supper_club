@@ -11,8 +11,8 @@
 .big-logo {
   width: 273px;
   height: 168px;
-  top: 160px;
-  left: 100px;
+  top: 16%;
+  left: 6.5%;
   position: absolute;
 }
 
@@ -34,8 +34,8 @@
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.50) 6.26%, rgba(255, 255, 255, 0.00) 93.85%);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(2px);
-  top: 450px;
-  left: 100px;
+  top: 70%;
+  left: 6.5%;
   position: absolute;
 
   &:hover {
@@ -45,7 +45,8 @@
 
 
 .intro {
+  font-size: 28px;
   position: absolute;
-  left: 100px;
-  top: 400px;
+  left: 6.5%;
+  top: 50%;
 }
