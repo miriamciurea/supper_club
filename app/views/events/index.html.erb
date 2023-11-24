@@ -21,12 +21,12 @@
         <div class ="card col-2 mx-3 p-4 rounded">
             <div class="index">
               <%= cl_image_tag event.photos.first.key, class: "card-image" %>
-              <h5 class="chef"><strong> 🧑‍🍳 <%= event.user.first_name %> <%= event.user.last_name %></strong></h5>
+              <h5 class="chef"><strong><iconify-icon icon="mdi:chef-hat"></iconify-icon> <%= event.user.first_name %> <%= event.user.last_name %></strong></h5>
               <p class="venue"><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
               <p class="cuisine"><i class="fa-solid fa-utensils"></i> <%= event.cuisine %></p>
               <div class="d-flex justify-content-between">
               <p class="date"><i class="fa-solid fa-calendar-days"></i> <%= event.date %></p>
-              <p class="price"><i class="fa-solid fa-sterling-sign"></i> <%= event.price %></p>
+              <p class="price"><i class="fa-solid fa-sterling-sign"></i> <%= event.price.to_i %></p>
               </div>
               <%= link_to "", event_path(event), class: 'stretched-link' %>
             </div>
