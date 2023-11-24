@@ -143,47 +143,55 @@
   line-height: 18px;
 }
 
-
-// position: relative;
-//   height: 100px;
-// }
-
-.log-in {
-  background: #2753a6;
-  color: rgb(77, 75, 75);
-  text-align: center;
-  width: 100%;
-}
-
-.log-in:hover {
-  color: rgb(236, 243, 237)
-}
-
-// .signup-forget {
-//   display: flex;
-//   background-color: white;
-//   color: black;
-//   justify-content: space-around;
-// }
-
-.sign-up {
-  width: 50%;
-  background-color: rgb(185, 190, 190);
-  padding: 12px;
-  border-radius: 12px;
+.sign-up, .forgot-pw {
   margin-top: 15px;
-}
-
-.forgot-pw {
-  width: 50%;
-  background-color: rgb(185, 185, 184);
-  padding: 12px;
-  border-radius: 12px;
-  margin-top: 15px;
+  margin-bottom: 10px;
 }
 
 .google-signin {
   a {
     text-decoration: none;
+  }
+}
+.create-event-btn {
+  color: black;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.02);
+  width: Fixed (162px);
+  height: Fixed (65px);
+  padding: 8px;
+  border-radius: 32px;
+  border: 1px 2px solid;
+  gap: 8px;
+  padding: 10px 24px !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.50) 6.26%, rgba(255, 255, 255, 0.00) 93.85%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(2px);
+
+  &:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.00) 93.85%, rgba(255, 255, 255, 0.50) 6.26%);
+    color: black !important;
+    border: black;
+  }
+}
+
+.login-btn, .signin-btn {
+  color: black;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.02);
+  width: Fixed (162px);
+  height: Fixed (65px);
+  padding: 8px;
+  border-radius: 32px;
+  border: 1px 2px solid;
+  text-align: center;
+  gap: 8px;
+  padding: 10px 50px !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.50) 6.26%, rgba(255, 255, 255, 0.00) 93.85%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(2px);
+
+  &:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.00) 93.85%, rgba(255, 255, 255, 0.50) 6.26%);
+    color: black !important;
+    border: black;
   }
 }

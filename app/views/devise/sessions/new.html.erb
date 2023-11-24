@@ -1,4 +1,4 @@
-<h2>Log in</h2>
+<h2 style="font-family: megrim; text-align: center; margin: 30px 0;">Log in</h2>
 
 <div class="container-show">
 
@@ -17,7 +17,7 @@
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
   <div class="form-actions log-in">
-    <%= f.button :submit, "Log in"%>
+    <%= f.button :submit, "Log in", class: "login-btn"%>
   </div>
 <% end %>
 

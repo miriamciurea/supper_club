@@ -1,5 +1,5 @@
 <div class="container", style="text-align:center">
-<h2>Sign up</h2>
+<h2 style="font-family: megrim; text-align: center; margin: 30px 0;">Sign up</h2>
 
 </div>
 
@@ -36,11 +36,9 @@
   </div>
 
   <div class="form-actions ">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", class:"signin-btn" %>
   </div>
 <% end %>
-
-<%# <%= button_to  'Login with Google', user_google_oauth2_omniauth_authorize_path, method: :post, :data => {turbo: "false"} %>
 
 <%= render "devise/shared/links" %>
 
