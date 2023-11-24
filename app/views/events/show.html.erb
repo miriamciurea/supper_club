@@ -37,7 +37,7 @@
 
     <div class="text-show">
       <h4><strong><%= @event.user.first_name %> <%= @event.user.last_name %></strong></h4>
-      <h5><strong>£ <%= @event.price %></strong></h5>
+      <h5><strong>£ <%= @event.price.to_i %></strong></h5>
       <h5><%= @event.venue %> </h5>
       <p><%= @event.date %><p>
       <p><em><%= @event.menu %></em></p>
