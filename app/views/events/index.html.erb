@@ -28,6 +28,11 @@
               <p class="date"><i class="fa-solid fa-calendar-days"></i> <%= event.date %></p>
               <p class="price"><i class="fa-solid fa-sterling-sign"></i> <%= event.price %></p>
               </div>
+              <h5><strong><iconify-icon icon="mdi:chef-hat"></iconify-icon> <%= event.user.first_name %> <%= event.user.last_name %></strong></h5>
+              <p><i class="fa-solid fa-location-pin"></i> <%= event.venue %></p>
+              <p><i class="fa-solid fa-utensils"></i> <%= event.cuisine %></p>
+              <p><i class="fa-solid fa-calendar-days"></i> <%= event.date %></p>
+              <p><i class="fa-solid fa-sterling-sign"></i> <%= event.price %></p>
               <%= link_to "", event_path(event), class: 'stretched-link' %>
             </div>
           </th>
